@@ -1,5 +1,6 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
+from starlette import responses
 
 from . import crud, models, schemas
 from .database import SessionLocal, engine
@@ -15,6 +16,11 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+@app.get("/", response_class=responses.RedirectResponse)
+def redirect_docs():
+    return responses.RedirectResponse("/docs/")
 
 
 @app.post("/weather/", response_model=schemas.Weather)

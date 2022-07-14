@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # DB
-apidb.db
+# apidb.db
 
 # Distribution / packaging
 .Python
