@@ -59,13 +59,13 @@ def read_last_weather_by_city(city: str, db: Session = Depends(get_db)):
 
 
 @app.delete("/weather/{city}/", response_model=dict)
-def delete_weather(city: str, db: Session = Depends(get_db)):
+def delete_weather_by_city(city: str, db: Session = Depends(get_db)):
     weather = crud.get_weather_by_city(db, city=city)
 
     if weather is None:
         raise HTTPException(status_code=404, detail="City not found")
 
-    crud.delete_weather(db, city=city)
+    crud.delete_weather_by_city(db, city=city)
 
     return {'status': 'ok'}
 

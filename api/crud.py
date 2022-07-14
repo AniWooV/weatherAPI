@@ -39,7 +39,7 @@ def create_weather(db: Session, weather: schemas.WeatherCreate):
     return db_weather
 
 
-def delete_weather(db: Session, city: str):
+def delete_weather_by_city(db: Session, city: str):
     db.query(models.Weather).filter(models.Weather.city == city).delete()
     db.commit()
 
