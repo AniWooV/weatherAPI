@@ -9,10 +9,12 @@ __REST API__ позволяющее запрашивать, отправлять
 ### __*Чтобы запустить локально:*__
 
 * Установите все зависимости из файла [requirements.txt](requirements.txt), Это можно сделать при помощи команды: 
-`pip install -r requirements. txt`
+
+    `pip install -r requirements. txt`
 
 * Запустите сервер при помощи команды:
-`uvicorn api.main:app --reload`
+
+    `uvicorn api.main:app --reload`
 
 ### __*Сделаль:*__
 
